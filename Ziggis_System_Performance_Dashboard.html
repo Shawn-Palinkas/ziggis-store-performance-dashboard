@@ -22,7 +22,7 @@ html,body{height:100%;overflow:hidden}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-size:13px;display:flex;flex-direction:column}
 .top-bar{background:var(--tan);color:var(--brown);padding:0 24px;height:54px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;box-shadow:0 2px 8px rgba(160,120,64,.4);z-index:200}
 .top-bar-left{display:flex;align-items:center;gap:14px}
-.top-bar h1{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;letter-spacing:-.2px;color:var(--brown)}
+.top-bar h1{font-family:'Inter',sans-serif;font-size:17px;font-weight:700;letter-spacing:-.2px;color:var(--brown)}
 .top-bar h1 span{opacity:.8}
 .tbdiv{width:1px;height:20px;background:rgba(68,29,31,.3)}
 .tbr{display:flex;gap:8px;align-items:center}
@@ -129,7 +129,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-
 .rank-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:12px;align-items:stretch}
 .rank-panel{border-radius:10px;overflow:hidden;box-shadow:0 1px 4px rgba(68,29,31,.1);display:flex;flex-direction:column;height:100%}
 .rank-hdr{background:var(--tan);padding:14px 18px;text-align:center}
-.rank-hdr-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--brown)}
+.rank-hdr-title{font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:var(--brown)}
 .rank-hdr.bot{background:var(--brown)}
 .rank-hdr.bot .rank-hdr-title{color:#fff}
 .rank-col-hdr{display:grid;grid-template-columns:1fr 80px 64px;gap:0;padding:6px 16px;background:var(--surface2);border-bottom:1px solid var(--border)}
@@ -207,7 +207,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-
 .goals-kpi-sub{font-size:11px;opacity:.65;margin-top:3px}
 .goals-section{margin-bottom:20px}
 .goals-section-hdr{display:flex;align-items:baseline;gap:10px;margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(--border)}
-.goals-section-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--text)}
+.goals-section-title{font-family:'Inter',sans-serif;font-size:15px;font-weight:700;color:var(--text)}
 .goals-section-badge{font-size:12px;font-weight:700;padding:2px 10px;border-radius:12px}
 .goals-section-badge.green{background:rgba(42,122,75,.12);color:var(--green)}
 .goals-section-badge.red{background:rgba(192,57,43,.1);color:var(--red)}
@@ -362,7 +362,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-
     gap: 12px;
   }
   .print-logo {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 18px;
     font-weight: 700;
     color: #441D1F;
@@ -408,7 +408,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-
 
 #pw-screen{position:fixed;inset:0;background:#441D1F;display:flex;align-items:center;justify-content:center;z-index:99999;flex-direction:column;gap:16px}
 #pw-screen.hidden{display:none}
-.pw-logo{font-family:'Syne',sans-serif;font-size:26px;font-weight:700;color:#CFA571;letter-spacing:-.3px}
+.pw-logo{font-family:'Inter',sans-serif;font-size:26px;font-weight:700;color:#CFA571;letter-spacing:-.3px}
 .pw-sub{font-size:12px;color:rgba(207,165,113,.6);text-transform:uppercase;letter-spacing:1px;margin-top:-8px}
 .pw-box{background:rgba(255,255,255,.07);border:1px solid rgba(207,165,113,.25);border-radius:12px;padding:28px 32px;display:flex;flex-direction:column;gap:14px;min-width:320px;text-align:center}
 .pw-title{font-size:13px;font-weight:600;color:rgba(207,165,113,.8);text-transform:uppercase;letter-spacing:.6px}
@@ -1967,6 +1967,7 @@ function printSummary(){
 
   // Open a new window with only the print content - suppresses browser header/footer
   const printWin = window.open('','_blank','width=900,height=700');
+  if(!printWin){ alert('Please allow popups for this site to use the Print feature, then try again.'); return; }
   printWin.document.write(`<!DOCTYPE html>
 <html>
 <head>
@@ -1997,36 +1998,10 @@ function printSummary(){
 
 #pw-screen{position:fixed;inset:0;background:#441D1F;display:flex;align-items:center;justify-content:center;z-index:99999;flex-direction:column;gap:16px}
 #pw-screen.hidden{display:none}
-.pw-logo{font-family:'Syne',sans-serif;font-size:26px;font-weight:700;color:#CFA571;letter-spacing:-.3px}
-.pw-sub{font-size:12px;color:rgba(207,165,113,.6);text-transform:uppercase;letter-spacing:1px;margin-top:-8px}
-.pw-box{background:rgba(255,255,255,.07);border:1px solid rgba(207,165,113,.25);border-radius:12px;padding:28px 32px;display:flex;flex-direction:column;gap:14px;min-width:320px;text-align:center}
-.pw-title{font-size:13px;font-weight:600;color:rgba(207,165,113,.8);text-transform:uppercase;letter-spacing:.6px}
-.pw-input{background:rgba(255,255,255,.08);border:1px solid rgba(207,165,113,.3);border-radius:8px;padding:10px 14px;font-size:15px;color:#fff;outline:none;text-align:center;letter-spacing:1px;font-family:'Inter',sans-serif;width:100%;box-sizing:border-box}
-.pw-input:focus{border-color:rgba(207,165,113,.7)}
-.pw-input::placeholder{color:rgba(255,255,255,.3);letter-spacing:0}
-.pw-btn{background:#CFA571;color:#441D1F;border:none;border-radius:8px;padding:10px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.3px;transition:.15s}
-.pw-btn:hover{background:#d9b080}
-.pw-error{font-size:12px;color:#e74c3c;font-weight:600;min-height:16px}
-.pw-hint{font-size:11px;color:rgba(207,165,113,.4)}
 
 </style>
 </head>
 <body>
-
-<!-- PASSWORD SCREEN -->
-<div id="pw-screen">
-  <div class="pw-logo">Ziggi's Coffee</div>
-  <div class="pw-sub">Internal Use Only</div>
-  <div class="pw-box">
-    <div class="pw-title">Enter Access Code</div>
-    <input class="pw-input" type="password" id="pw-input" placeholder="Password" 
-           onkeydown="if(event.key==='Enter')checkPW()">
-    <button class="pw-btn" onclick="checkPW()">Access Dashboard</button>
-    <div class="pw-error" id="pw-error"></div>
-  </div>
-  <div class="pw-hint">System Performance Dashboard · Leadership Access</div>
-</div>
-
 ${printHTML}
 </body>
 </html>`);
